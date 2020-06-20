@@ -1,0 +1,14 @@
+<p>timer works! {{ onData }}</p>
+<p *ngFor="let log of logsList">{{ log }}</p>
+
+<div>
+  <div><app-displaytimer [data]="onData"></app-displaytimer></div>
+  <div>
+    <app-count [data]="timer" (onData)="updateData($event)">{{
+      timer
+    }}</app-count>
+  </div>
+</div>
+
+<app-logs (onUpdateData)="updateLogs($event)"></app-logs>
+<app-timelimit></app-timelimit>
